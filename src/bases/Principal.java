@@ -61,8 +61,8 @@ public class Principal {
 
 	/**
 	 * La chaine est-t-elle un palindrome cad a a des carctères symétriques par raport à son centre.
-	 * @param str
-	 * @return
+	 * @param str Chaine à vérifier
+	 * @return booléan disant si la chaine est un palindrome ou pas
 	 */
 	public static boolean estUnPalindrome(String str) {
 		boolean palindrome = true;
