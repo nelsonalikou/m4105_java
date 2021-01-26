@@ -8,8 +8,8 @@ package bases;
 public class Principal {
 
 	/**
-	 * Point d'entrée dans le programme
-	 * @param args la liste des maramètres fournis au lancement du programme
+	 * Point d'entrÃ©e dans le programme
+	 * @param args la liste des maramÃ¨tres fournis au lancement du programme
 	 */
 	public static void main(String[] args) {
 		String prenom = "Nelson";
@@ -22,22 +22,23 @@ public class Principal {
 		System.out.println("Le plus grand est "+maximum(5,15));
 		System.out.println("Le masque est "+ masquerLettres("toto",'*'));
 		System.out.println("le mot toto est il un palindrome ? "+ estUnPalindrome("ttto"));
+		System.out.println("la sous chaine 'to' se trouve le mot 'toto' Ã  l'indice "+ recherche("toto","to",true));
 
 	}
 
 	/**
 	 * Longueur de la chaine
-	 * @param chaine Chaine à évaluer
+	 * @param chaine Chaine Ã  Ã©valuer
 	 * @return Sa longueur
 	 */
 	public static String longueurDeChaine(String chaine) {
-		return chaine.length() + "caractères";
+		return chaine.length() + "caractÃ¨res";
 	}
 
 	/**
 	 * Maximum de 2 entiers
 	 * @param a premier entier
-	 * @param b deuxième entier
+	 * @param b deuxiÃ¨me entier
 	 * @return la valeur du plus grand des deux
 	 */
 	public static int maximum(int a, int b) {
@@ -45,10 +46,10 @@ public class Principal {
 	}
 
 	/**
-	 * Construction de la version cachée d'une chaine de caractères.
+	 * Construction de la version cachÃ©e d'une chaine de caractÃ¨res.
 	 * @param lettre chaine de base
-	 * @param masque caractère de remplissage
-	 * @return version cachée de la chaine
+	 * @param masque caractÃ¨re de remplissage
+	 * @return version cachÃ©e de la chaine
 	 */
 	public static String masquerLettres(String lettre,char masque) {
 		String lettresCachees = "";
@@ -60,9 +61,9 @@ public class Principal {
 	}
 
 	/**
-	 * La chaine est-t-elle un palindrome cad a a des carctères symétriques par raport à son centre.
-	 * @param str Chaine à vérifier
-	 * @return booléan disant si la chaine est un palindrome ou pas
+	 * La chaine est-t-elle un palindrome cad a a des carctÃ¨res symÃ©triques par raport Ã  son centre.
+	 * @param str Chaine Ã  vÃ©rifier
+	 * @return boolÃ©an disant si la chaine est un palindrome ou pas
 	 */
 	public static boolean estUnPalindrome(String str) {
 		boolean palindrome = true;
@@ -80,13 +81,34 @@ public class Principal {
 		return palindrome;
 	}
 
-	/** Index de la 1er occurence de la chaine recherchée dans la chaine source.
+	/** Index de la 1ere occurence de la chaine recherchÃ©e dans la chaine source.
      *
      * @param chaineSource chaine source
-     * @param chaineRecherche chaine recherchée
-     * @return indice si trouvé, -1 sinon
+     * @param chaineRecherche chaine recherchÃ©e
+     * @return indice si trouvÃ©, -1 sinon
      */
-	public static int recherche(String chaineSource, String chaineRecherche) {
-		return 0;
-	}
+	public static int recherche(String chaineSource, String chaineRecherche, boolean priseEnCompteCasse) {
+        if (!priseEnCompteCasse) {
+            chaineSource = chaineSource.toLowerCase();
+            chaineRecherche = chaineRecherche.toLowerCase();
+        }
+
+        int indiceRecherche = 0;
+        int res = 0;
+        for (int indiceSource = 0; indiceSource < chaineSource.length(); indiceSource++) {
+            if (chaineSource.charAt(indiceSource) == chaineRecherche.charAt(indiceRecherche)) {
+                if (indiceRecherche == 0) {
+                    res = indiceSource;
+                }else if (indiceRecherche == chaineRecherche.length()-1) {
+                    return res;
+                }
+                if (indiceRecherche < chaineRecherche.length()-1) {
+                    indiceRecherche++;
+                }
+            }else {
+                indiceRecherche = 0;
+            }
+        }
+        return -1;
+     }
 }
