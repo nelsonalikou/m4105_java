@@ -19,12 +19,17 @@ public class PrincipalTest {
 
 	@Test
 	public void estUnPalindrome_test() {
-		assertFalse("****",Principal.estUnPalindrome("ttto"));
+		assertFalse(Principal.estUnPalindrome("ttto"));
 	}
 
 
 	@Test
 	public void recherche_test() {
 		assertEquals(0,Principal.recherche("toto","to",true));
+	}
+
+	@Test
+	public void remplacer_test() {
+		assertEquals("tata",Principal.remplacer("toto", "o", "a"));
 	}
 }
