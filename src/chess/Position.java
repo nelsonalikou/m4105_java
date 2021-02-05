@@ -184,8 +184,8 @@ public class Position {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Position position = new Position(1,1);
+		System.out.println(position.toString());
 	}
 
 }
