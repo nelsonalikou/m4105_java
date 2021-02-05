@@ -7,24 +7,12 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Triangle{
+public class Triangle extends Shape{
 
 	/**
 	 * Taille du triangle
 	 */
 	private int size;
-
-	/**
-	 * Caractère de dessin du triangle
-	 */
-	private char pen = '#';
-
-	/**
-	 * Methode de remplissage :
-	 * false - desssin uniquement du contour
-	 * true - dessin du contour et remplissage de l'interieur
-	 */
-	private boolean filled = false;
 
 	/**
 	 * Constructeur de la classe Triangle, vérifie si la taille est positive.
@@ -42,7 +30,7 @@ public class Triangle{
 	 * @return le caractère de dessin
 	 */
 	public char getPen() {
-		return this.pen;
+		return super.getPen();
 	}
 
 	/**
@@ -50,7 +38,7 @@ public class Triangle{
 	 * @param pen nouveau caractère de dessin
 	 */
 	public void  setPen(char pen) {
-		this.pen = pen;
+		super.setPen(pen);
 	}
 
 	/**
@@ -58,7 +46,7 @@ public class Triangle{
 	 * @return boolean designant l'état de remplissage
 	 */
 	public boolean isFilled() {
-		return this.filled;
+		return super.isFilled();
 	}
 
 	/**
@@ -66,29 +54,30 @@ public class Triangle{
 	 * @param filled nouveau mode de remplissage du triangle
 	 */
 	public void setFilled(boolean filled) {
-		this.filled = filled;
+		super.setFilled(filled);
 	}
 
 
 	/**
 	 * Dessin du triangle avec le mode de remplissage défini.
 	 */
+	@Override
 	public void draw() {
 		String draw = "";
 
 		//pour chaque point de hauteur
-		for(int hauteur = 0; hauteur < this.size; hauteur++) {
+		for(int hauteur = 0; hauteur <= this.size; hauteur++) {
 			//pour chaque point de largeur
 			for(int largeur = 0; largeur < hauteur; largeur++) {
 				//Si le mode de remplissage est sur plein on dessine juste le caractère, sinon il faut verifier si on est au défut ou à la fin du triangle ou à la première et dernière colonne à l'interieur du triangle et là on dessine le caractère (autrement on dessine un espace)
-				if(this.filled){
-					draw += this.pen;
+				if(isFilled()){
+					draw += getPen();
 				}else{
-					if((hauteur == 0 || hauteur == this.size-1) ){
-						draw += this.pen;
+					if((hauteur == 0 || hauteur == this.size) ){
+						draw += getPen();
 					}else{
 						if(largeur == 0 || largeur == hauteur-1){
-							draw += this.pen;
+							draw += getPen();
 						}else{
 							draw += " ";
 						}

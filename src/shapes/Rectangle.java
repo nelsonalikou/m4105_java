@@ -7,25 +7,12 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Rectangle {
+public class Rectangle extends Shape{
 
 	/**
 	 * Largeur et hauteur du rectangle
 	 */
 	private int width, height;
-
-	/**
-	 * Caractère de dessin du rectangle
-	 */
-	private char pen = '#';
-
-	/**
-	 * Methode de remplissage :
-	 * false - desssin uniquement du contour
-	 * true - dessin du contour et remplissage de l'interieur
-	 */
-	private boolean filled = false;
-
 
 	/**
 	 * Constructeur d'un rectangle. vérifie si la largeur et la hauteur sont positives.
@@ -45,7 +32,7 @@ public class Rectangle {
 	 * @return le caractère de dessin
 	 */
 	public char getPen() {
-		return this.pen;
+		return super.getPen();
 	}
 
 	/**
@@ -53,7 +40,7 @@ public class Rectangle {
 	 * @param pen nouveau caractère de dessin
 	 */
 	public void setPen(char pen) {
-		this.pen = pen;
+		super.setPen(pen);
 	}
 
 	/**
@@ -61,7 +48,7 @@ public class Rectangle {
 	 * @return boolean designant l'état de remplissage
 	 */
 	public boolean isFilled() {
-		return this.filled;
+		return super.isFilled();
 	}
 
 	/**
@@ -69,12 +56,13 @@ public class Rectangle {
 	 * @param filled nouveau mode de remplissage du rectangle
 	 */
 	public void setFilled(boolean filled) {
-		this.filled = filled;
+		super.setFilled(filled);
 	}
 
 	/**
 	 * Dessin du rectangle avec le mode de remplissage défini.
 	 */
+	@Override
 	public void draw() {
 		String draw = "";
 
@@ -83,14 +71,14 @@ public class Rectangle {
 				//pour chaque point de largeur
 				for(int largeur = 0; largeur < this.width; largeur++) {
 					//Si le mode de remplissage est sur plein on dessine juste le caractère, sinon il faut verifier si on est au défut ou à la fin du rectangle ou à la première et dernière colonne à l'interieur du rectangle et là on dessine le caractère (autrement on dessine un espace)
-					if(this.filled){
-						draw += this.pen;
+					if(isFilled()){
+						draw += getPen();
 					}else{
 						if((hauteur == 0 || hauteur == this.height-1) ){
-							draw += this.pen;
+							draw += getPen();
 						}else{
 							if(largeur == 0 || largeur == this.width-1){
-								draw += this.pen;
+								draw += getPen();
 							}else{
 								draw += " ";
 							}
