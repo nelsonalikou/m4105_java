@@ -106,4 +106,16 @@ public class Rectangle extends Shape{
 		rectangle.draw();
 	}
 
+	@Override
+	public double getPerimeter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getSurface() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

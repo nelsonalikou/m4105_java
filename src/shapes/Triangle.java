@@ -105,4 +105,16 @@ public class Triangle extends Shape{
 
 	}
 
+	@Override
+	public double getPerimeter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getSurface() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
