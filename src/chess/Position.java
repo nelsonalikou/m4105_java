@@ -183,9 +183,16 @@ public class Position {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String [] args) {
 		Position position = new Position(1,1);
 		System.out.println(position.toString());
-	}
+		try {
+			Position invalide = new Position(-2, 12);
+		System.out.println(invalide);
+		}catch(IllegalArgumentException ex) {
+			System.out.println("Exception attrapée !");
+			System.out.println(ex.getMessage());
+			}
+		}
 
 }
