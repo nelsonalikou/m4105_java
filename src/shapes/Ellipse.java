@@ -3,8 +3,26 @@ package shapes;
 public class Ellipse extends Shape{
 
 	private double a, b;
+
+
+	/**
+	 * Constructeur d'un rectangle. vérifie si la largeur et la hauteur sont positives.
+	 * @param a largeur du rectangle
+	 * @param height hauteur du rectangle
+	 * @throws IllegalArgumentException
+	 */
+	public Ellipse(double a, double b ) throws IllegalArgumentException{
+		if(a < 0 || b < 0)
+			throw new IllegalArgumentException("la largeur ou la hauteur est négative" + a + " " + b);
+		this.a = a;
+		this.b = b;
+	}
+
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Ellipse ellipse = new Ellipse(4,5);
+		System.out.println(ellipse.getPerimeter());
+		System.out.println(ellipse.getSurface());
 
 	}
 
@@ -15,7 +33,7 @@ public class Ellipse extends Shape{
 	@Override
 	public double getPerimeter() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 2 * Math.PI * Math.sqrt((a*a + b*b)/2);
 	}
 
 	@Override
