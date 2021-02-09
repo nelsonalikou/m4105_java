@@ -70,13 +70,13 @@ public class Ellipse extends Shape{
 
 	@Override
 	public double getPerimeter() {
-		return 2 * Math.PI * Math.sqrt((a*a + b*b)/2);
+		return Math.round(2 * Math.PI * Math.sqrt((a*a + b*b)/2) * 100.0) / 100.0;
 	}
 
 	@Override
 	public double getSurface() {
 		//formule pi * demi axe vertical * demi axe horizontal
-		return Math.PI * a * b;
+		return Math.round(Math.PI * a * b * 100.0) / 100.0 ;
 	}
 
 }
@@ -155,7 +155,10 @@ class Circle extends Ellipse{
 
 	public static void main(String[] args) {
 		Ellipse ellipse = new Circle(5);
+		double surface = Math.round(ellipse.getSurface() * 100.0) / 100.0;
 		System.out.println(ellipse.getPerimeter());
+		//System.out.format("%.2f", ellipse.getPerimeter());
+		System.out.println(surface);
 		System.out.println(ellipse.getSurface());
 	}
 
