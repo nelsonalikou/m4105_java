@@ -7,7 +7,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Triangle extends Shape{
+public class Triangle extends Shape implements Drawable{
 
 	/**
 	 * Taille du triangle

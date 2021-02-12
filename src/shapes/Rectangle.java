@@ -7,7 +7,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Drawable{
 
 	/**
 	 * Largeur et hauteur du rectangle
@@ -104,6 +104,9 @@ public class Rectangle extends Shape{
 		rectangle.setFilled(true);
 		System.out.println();
 		rectangle.draw();
+		
+		Drawable r = new Rectangle(7,5);
+		r.draw();
 	}
 
 	@Override

@@ -5,7 +5,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  * Classe de création d'une ellipse.
  */
-public class Ellipse extends Shape{
+public class Ellipse extends Shape implements Drawable{
 
 	/**
 	 * le grand axe et le petit axe de notre ellipse
@@ -62,6 +62,10 @@ public class Ellipse extends Shape{
 		Ellipse ellipse = new Ellipse(4,5);
 		System.out.println(ellipse.getPerimeter());
 		System.out.println(ellipse.getSurface());
+
+		//methode d'affichage
+		Drawable e = new Ellipse(7,5);
+		e.draw();
 	}
 
 	@Override
@@ -78,6 +82,8 @@ public class Ellipse extends Shape{
 		//formule pi * demi axe vertical * demi axe horizontal
 		return Math.round(Math.PI * a * b * 100.0) / 100.0 ;
 	}
+
+
 
 }
 
