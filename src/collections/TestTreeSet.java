@@ -1,18 +1,20 @@
 /**
  *
  */
-package collection;
+package collections;
 
-import java.util.HashSet;
+import java.util.TreeSet;
 
 /**
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class TestHashSet {
+public class TestTreeSet {
 
 	public static void main(String [] args) {
-		HashSet<String> set = new HashSet<>();
+
+		TreeSet<String> set = new TreeSet<>();
+
 		System.out.println("Ajout de BB :       " + set.add("BB"));
 		System.out.println("Ajout de AA :       " + set.add("AA"));
 		System.out.println("Ajout de CC :       " + set.add("CC"));

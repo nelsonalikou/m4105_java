@@ -1,7 +1,7 @@
 /**
  *
  */
-package collection;
+package collections;
 
 /**
  * @author ALIKOU DONGMO NELSON
