@@ -104,21 +104,27 @@ public class Rectangle extends Shape implements Drawable{
 		rectangle.setFilled(true);
 		System.out.println();
 		rectangle.draw();
-		
+
 		Drawable r = new Rectangle(7,5);
 		r.draw();
 	}
 
 	@Override
 	public double getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (width + height) / 2;
 	}
 
 	@Override
 	public double getSurface() {
-		// TODO Auto-generated method stub
-		return 0;
+		return width * height;
+	}
+
+	public String toString(){
+		String res = "";
+		res += String.format("%30s", "Type de figure ") + "Rectangle" + "\n";
+		res += String.format("%30s", "Périmètre") + this.getPerimeter() + "\n";
+		res += String.format("%30s", "Surface") + this.getSurface() + "\n";
+		return res;
 	}
 
 }

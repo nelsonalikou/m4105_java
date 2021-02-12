@@ -108,13 +108,20 @@ public class Triangle extends Shape implements Drawable{
 	@Override
 	public double getPerimeter() {
 		// TODO Auto-generated method stub
-		return 0;
+		return size + size + Math.sqrt(size*size + size*size);
 	}
 
 	@Override
 	public double getSurface() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size*size/2;
+	}
+
+	public String toString(){
+		String res = "";
+		res += String.format("%30s", "Type de figure ") + "Triangle" + "\n";
+		res += String.format("%30s", "Périmètre") + this.getPerimeter() + "\n";
+		res += String.format("%30s", "Surface") + this.getSurface() + "\n";
+		return res;
 	}
 
 }
