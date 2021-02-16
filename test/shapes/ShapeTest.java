@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class ShapeTest {
 
-	private Shape shape;
+	private AbstractShape shape;
 	@Before
 	public void setUp() throws Exception {
 		shape = new Rectangle(5,3);

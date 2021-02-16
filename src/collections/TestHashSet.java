@@ -5,6 +5,8 @@ package collections;
 
 import java.util.HashSet;
 
+import shapes.*;
+
 /**
  * @author ALIKOU DONGMO NELSON
  *
@@ -12,23 +14,23 @@ import java.util.HashSet;
 public class TestHashSet {
 
 	public static void main(String [] args) {
-		HashSet<String> set = new HashSet<>();
-		System.out.println("Ajout de BB :       " + set.add("BB"));
-		System.out.println("Ajout de AA :       " + set.add("AA"));
-		System.out.println("Ajout de CC :       " + set.add("CC"));
-		System.out.println("Ajout de AA :       " + set.add("AA"));
+		HashSet<Shape> set = new HashSet<>();
 
-		System.out.println("Ensemble :          " + set);
-		System.out.println("Taille :            " + set.size());
+		Rectangle AA = new Rectangle(8, 2);
+		Triangle  BB = new Triangle(6);
+		Square    CC = new Square(4);
+		Ellipse   DD = new Ellipse(5, 3);
 
-		System.out.println("Contient AA :       " + set.contains("AA"));
-		System.out.println("Contient DD :       " + set.contains("DD"));
+		System.out.println("Ajout de AA :       " + set.add(AA));
+		System.out.println("Ajout de BB :       " + set.add(BB));
+		System.out.println("Ajout de CC :       " + set.add(CC));
+		System.out.println("Ajout de DD :       " + set.add(DD));
 
-		for (String s : set) {
-			System.out.println(s);
+		for (Shape s : set) {
+			System.out.println(s.toString());
 		}
 
-		System.out.println("Suppression de AA : " + set.remove("AA"));
-		System.out.println("Suppression de ZZ : " + set.remove("ZZ"));
+		System.out.println("Suppression de AA : " + set.remove(AA));
+		System.out.println("Suppression de DD : " + set.remove(DD));
 	}
 }

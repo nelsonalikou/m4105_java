@@ -7,7 +7,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Rectangle extends Shape implements Drawable{
+public class Rectangle extends AbstractShape implements Drawable{
 
 	/**
 	 * Largeur et hauteur du rectangle
@@ -122,9 +122,14 @@ public class Rectangle extends Shape implements Drawable{
 	public String toString(){
 		String res = "";
 		res += String.format("%30s", "Type de figure ") + "Rectangle" + "\n";
-		res += String.format("%30s", "Périmètre") + this.getPerimeter() + "\n";
-		res += String.format("%30s", "Surface") + this.getSurface() + "\n";
+		res += String.format("%30s", "Périmètre ") + this.getPerimeter() + "\n";
+		res += String.format("%30s", "Surface ") + this.getSurface() + "\n";
 		return res;
+	}
+
+	@Override
+	public int compareTo(Shape o) {
+		return getSurface() > o.getSurface() ? 1 : 0;
 	}
 
 }

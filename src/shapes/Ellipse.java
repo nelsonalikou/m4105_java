@@ -5,7 +5,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  * Classe de création d'une ellipse.
  */
-public class Ellipse extends Shape implements Drawable{
+public class Ellipse extends AbstractShape implements Drawable{
 
 	/**
 	 * le grand axe et le petit axe de notre ellipse
@@ -81,6 +81,13 @@ public class Ellipse extends Shape implements Drawable{
 	public double getSurface() {
 		//formule pi * demi axe vertical * demi axe horizontal
 		return Math.round(Math.PI * a * b * 100.0) / 100.0 ;
+	}
+
+
+	@Override
+	public int compareTo(Shape o) {
+
+		return getSurface() > o.getSurface() ? 1 : 0;
 	}
 
 

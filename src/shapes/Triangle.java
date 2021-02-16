@@ -7,7 +7,7 @@ package shapes;
  * @author ALIKOU DONGMO NELSON
  *
  */
-public class Triangle extends Shape implements Drawable{
+public class Triangle extends AbstractShape implements Drawable{
 
 	/**
 	 * Taille du triangle
@@ -119,9 +119,14 @@ public class Triangle extends Shape implements Drawable{
 	public String toString(){
 		String res = "";
 		res += String.format("%30s", "Type de figure ") + "Triangle" + "\n";
-		res += String.format("%30s", "Périmètre") + this.getPerimeter() + "\n";
-		res += String.format("%30s", "Surface") + this.getSurface() + "\n";
+		res += String.format("%30s", "Périmètre ") + this.getPerimeter() + "\n";
+		res += String.format("%30s", "Surface ") + this.getSurface() + "\n";
 		return res;
+	}
+
+	@Override
+	public int compareTo(Shape o) {
+		return getSurface() > o.getSurface() ? 1 : 0;
 	}
 
 }
